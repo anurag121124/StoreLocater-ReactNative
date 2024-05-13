@@ -1,31 +1,25 @@
+// Slider.js
 import React, { useRef, useEffect, useState } from 'react';
 import { View, StyleSheet, Dimensions, FlatList, Image } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
-export default function Slider() {
-  const ImageSlider = [
-    'https://app.fuelbuddy.in/assets/Smart-Tank.00cc4e6c.webp',
-    'https://app.fuelbuddy.in/assets/Vaut.ee028dc0.webp',
-    'https://app.fuelbuddy.in/assets/Buddy-Can.3271ac24.webp',
-    'https://app.fuelbuddy.in/assets/DOT.514bc766.webp'
-  ];
-
+export default function Slider({ data, style }) {
   const sliderRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const renderItem = ({ item }) => (
-    <Image source={{ uri: item }} style={styles.image} />
+    <Image source={{ uri: item }} style={[styles.image, style]} />
   );
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (sliderRef.current) {
         sliderRef.current.scrollToIndex({
-          index: (currentIndex + 1) % ImageSlider.length,
+          index: (currentIndex + 1) % data.length,
           animated: true,
         });
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % ImageSlider.length);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
       }
     }, 3000); // Change the interval as needed (in milliseconds)
 
@@ -36,7 +30,7 @@ export default function Slider() {
     <View style={styles.container}>
       <FlatList
         ref={sliderRef}
-        data={ImageSlider}
+        data={data}
         renderItem={renderItem}
         keyExtractor={(item, index) => index.toString()}
         horizontal
