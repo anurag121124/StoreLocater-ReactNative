@@ -1,0 +1,10 @@
+import { View, Text } from 'react-native'
+import React from 'react'
+
+export default function Pickup() {
+  return (
+    <View>
+      <Text>Pickup</Text>
+    </View>
+  )
+}
