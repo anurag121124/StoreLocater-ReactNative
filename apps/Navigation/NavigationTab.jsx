@@ -26,7 +26,7 @@ export default function NavigationTab() {
           name="Pickup" 
           component={HomeScreen} 
           options={{
-            tabBarLabel: 'Pickup',
+            tabBarLabel: 'Home',
             tabBarIcon: ({ color, size }) => (
               <AntDesign name="home" color={color} size={size} />
             ),
@@ -36,7 +36,7 @@ export default function NavigationTab() {
           name="Home" 
           component={Pickup} 
           options={{
-            tabBarLabel: 'Home',
+            tabBarLabel: 'Pickup',
             tabBarIcon: ({ color, size }) => (
               <FontAwesome6 name="gas-pump" color={color} size={size} />
             ),
