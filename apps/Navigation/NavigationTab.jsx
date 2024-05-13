@@ -24,7 +24,7 @@ export default function NavigationTab() {
       >
         <Tab.Screen 
           name="Pickup" 
-          component={Pickup} 
+          component={HomeScreen} 
           options={{
             tabBarLabel: 'Pickup',
             tabBarIcon: ({ color, size }) => (
@@ -34,7 +34,7 @@ export default function NavigationTab() {
         />
         <Tab.Screen 
           name="Home" 
-          component={HomeScreen} 
+          component={Pickup} 
           options={{
             tabBarLabel: 'Home',
             tabBarIcon: ({ color, size }) => (
