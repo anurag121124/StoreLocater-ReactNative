@@ -1,11 +1,13 @@
 #import "AppDelegate.h"
-
+#import <GoogleMaps/GoogleMaps.h>
 #import <React/RCTBundleURLProvider.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [GMSServices provideAPIKey:@"AIzaSyB2Cr0yohtWHs-iET1lQvjlqA8sK39bdwk"]; // add this line using the API key obtained from Google Console
+
   self.moduleName = @"StoreLocater";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
