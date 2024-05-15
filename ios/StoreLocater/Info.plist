@@ -69,6 +69,10 @@
   <string>Zocial.ttf</string>
   <string>Fontisto.ttf</string>
 </array>
+
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>This app needs to get your location...</string>
+
 	
 </dict>
 </plist>
